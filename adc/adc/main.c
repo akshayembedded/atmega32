@@ -62,7 +62,7 @@ int main(void)
 		ADCSRA|=(1<<ADSC);
 		while ((ADCSRA&(1<<ADIF))==0);
 		cmd(0x80);
-		dispnum((ADCH<<8)|ADCL);
+		dispnum(ADCL|(ADCH<<8));
 	
     }
 }

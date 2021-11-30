@@ -304,12 +304,12 @@ int main(void)
 		cmd(0x80);
  194:	80 e8       	ldi	r24, 0x80	; 128
  196:	0e 94 41 00 	call	0x82	; 0x82 <cmd>
-		dispnum((ADCH<<8)|ADCL);
- 19a:	85 b1       	in	r24, 0x05	; 5
- 19c:	90 e0       	ldi	r25, 0x00	; 0
- 19e:	98 2f       	mov	r25, r24
- 1a0:	88 27       	eor	r24, r24
- 1a2:	24 b1       	in	r18, 0x04	; 4
+		dispnum(ADCL|(ADCH<<8));
+ 19a:	24 b1       	in	r18, 0x04	; 4
+ 19c:	85 b1       	in	r24, 0x05	; 5
+ 19e:	90 e0       	ldi	r25, 0x00	; 0
+ 1a0:	98 2f       	mov	r25, r24
+ 1a2:	88 27       	eor	r24, r24
  1a4:	82 2b       	or	r24, r18
  1a6:	0e 94 70 00 	call	0xe0	; 0xe0 <dispnum>
 	
